@@ -1,0 +1,18 @@
+<div class="container">
+    <h2 class="mt-5 mb">Transactions List</h2>
+    <div class="row font-weight-bold border-bottom pb-2">
+      <div class="col-2">ID</div>
+      <div class="col-3">Date</div>
+      <div class="col-4">Comments</div>
+      <div class="col-3">Action</div>
+    </div>
+    <div *ngFor="let transaction of transactions" class="mb-2 row">
+      <div class="col-2">{{transaction.id}}</div>
+      <div class="col-3">{{transaction.date | date: 'dd/MM/yyyy  '}}</div>
+      <div class="col-4">{{transaction.comments}}</div>
+      <div class="col-3">
+        <a [routerLink]="['/transaction-details', transaction.id]">View</a>
+      </div>
+    </div>
+  </div>
+  
